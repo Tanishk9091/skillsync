@@ -3,111 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Authentication</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; 
-        }
-
-        .container {
-            border: 2px solid black;
-            border-radius: 5px;
-            background-color: lightgray;
-            width: 300px;
-            padding: 20px;
-            box-sizing: border-box;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        h3 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            color: black;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            width: 100%;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: black;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-            background-color: white;
-        }
-
-        .form-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: black;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .form-btn:hover {
-            background-color: whitesmoke;
-        }
-
-        .form-footer {
-            margin-top: 20px;
-            font-size: 14px;
-            color: black;
-            text-align: center;
-        }
-
-        .form-footer a {
-            color: blueviolet;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .form-footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div class="container">
-        <h3>Login To Your Account</h3>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" placeholder="Enter Your Email" id="email">
+
+      <header>
+        <div id="navbar" class="obj-width">
+            <a href="start.html"><img class="logo" src="https://taptalent.ai/wp-content/uploads/2025/07/skill-sync-pty-ltd-recruitment-agency-profile.jpg" alt="logo of site"></a>
+            <ul id="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Browse Jobs</a></li>
+                <li><a href="">Contact</a></li>
+                <button id="w-btn">Join</button>
+            </ul>
+
+            <i id="bar"class='bx bx-menu'></i>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" placeholder="Enter your Password" id="password">
+    </header>
+
+    <main>
+        <div id="login-section" class="container fade fade-in">
+            <h3>Login To Your Account</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" placeholder="Enter Your Email" id="login-email" required>
+                    <div class="error-message" id="login-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" placeholder="Enter your Password" id="login-password" required>
+                    <div class="error-message" id="login-password-error"></div>
+                </div>
+                <button type="submit" class="form-btn">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="show-signup">Sign up here</a></p>
+            </form>
         </div>
-        <button type="submit" class="form-btn">Login</button>
-        <p class="form-footer">Don't have an account? <a href="signup.html">Sign up here</a></p>
-    </div>
+
+        <div id="signup-section" class="container fade">
+            <h3>Create Your Account</h3>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-fullname">Full Name</label>
+                    <input type="text" id="signup-fullname" placeholder="Enter your full name" required>
+                    <div class="error-message" id="signup-fullname-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    <div class="error-message" id="signup-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Enter your password" required>
+                    <small class="form-help-text">Password must be at least 8 characters long</small>
+                    <div class="error-message" id="signup-password-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm your password" required>
+                    <div class="error-message" id="signup-confirm-error"></div>
+                </div>
+                <button type="submit" class="form-btn">Sign Up</button>
+                <p class="form-footer">Already have an account? <a href="#" id="show-login">Login here</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="login.js">
+    </script>
 </body>
 </html> 
