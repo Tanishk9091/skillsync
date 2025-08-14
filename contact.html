@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SkillSync</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: black;
+        }
+
+        .contact-header p {
+            color: black;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 2rem;
+            border-radius: 13px;
+            border: 2px solid black;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: bisque;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            min-width: 2rem;
+        }
+
+        .info-item p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: bisque;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .contact-form {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 2rem;
+            border-radius: 13px;
+            border: 2px solid black;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid bisque;
+            border-radius: 18px;
+            background-color: rgba(255, 255, 255, 0.9);
+            min-height: 150px;
+            resize: vertical;
+            font-family: inherit;
+            font-size: 14px;
+            color: black;
+            transition: all 0.3s ease;
+        }
+
+        textarea:focus {
+            border-color: white;
+            outline: none;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .success-message {
+            display: none;
+            background-color: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            padding: 1rem;
+            border-radius: 13px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="navbar" class="obj-width">
+            <a href="start.html"><img class="logo" src="https://taptalent.ai/wp-content/uploads/2025/07/skill-sync-pty-ltd-recruitment-agency-profile.jpg" alt="logo of site"></a>
+            <ul id="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Browse Jobs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <button id="w-btn">Join</button>
+            </ul>
+            <i id="bar" class='bx bx-menu'></i>
+        </div>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p>Have any questions? We'd love to hear from you.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 2rem; color: bisque;">Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" placeholder="Your name" required>
+                                <div class="error-message" id="name-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="Your email" required>
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Message subject" required>
+                            <div class="error-message" id="subject-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Your message" required></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        <button type="submit" class="form-btn">Send Message</button>
+                        <div class="success-message" id="success-message">
+                            Message sent successfully! We'll get back to you soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 2rem; color: bisque;">Contact Information</h3>
+                <div class="info-item">
+                    <i class='bx bx-map'></i>
+                    <p>Chitkara University Rajpura Panjab</p>
+                </div>
+                <div class="info-item">
+                    <i class='bx bx-phone'></i>
+                    <p>123-4567</p>
+                </div>
+                <div class="info-item">
+                    <i class='bx bx-envelope'></i>
+                    <p>contact@skillsync.com</p>
+                </div>
+                <div class="info-item">
+                    <i class='bx bx-time-five'></i>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar functionality
+        const bar = document.getElementById('bar');
+        const menu = document.getElementById('menu');
+
+        bar.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('success-message');
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function clearError(elementId) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.style.display = 'none';
+        }
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Validate name
+            if (!name || name.length < 2) {
+                showError('name-error', 'Please enter your name (minimum 2 characters)');
+                isValid = false;
+            } else {
+                clearError('name-error');
+            }
+
+            // Validate email
+            if (!validateEmail(email)) {
+                showError('email-error', 'Please enter a valid email address');
+                isValid = false;
+            } else {
+                clearError('email-error');
+            }
+
+            // Validate subject
+            if (!subject || subject.length < 3) {
+                showError('subject-error', 'Please enter a subject (minimum 3 characters)');
+                isValid = false;
+            } else {
+                clearError('subject-error');
+            }
+
+            // Validate message
+            if (!message || message.length < 10) {
+                showError('message-error', 'Please enter a message (minimum 10 characters)');
+                isValid = false;
+            } else {
+                clearError('message-error');
+            }
+
+            if (isValid) {
+                // Here you would typically send the data to your backend
+                console.log('Form submitted:', { name, email, subject, message });
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
