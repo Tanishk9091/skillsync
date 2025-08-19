@@ -1,14 +1,30 @@
 #w-btn{
     margin-left: 40px;
-    background: white;
-    color: black;
+    background:black;
+    color: white;
     padding : 9px 30px;
     border-radius: 18px;
     font-size: 0.9rem;
     font-weight: 100;
-    box-shadow: none;
+    box-shadow:none;
 
 }
+#g-btn{
+    text-decoration: none;
+    background-color:black;
+    color: white;
+    padding: 9px 30px;
+    border-radius:20px;
+    cursor: pointer;
+
+}
+.sec-space{
+    padding: 4rem 0;
+}
+.extra-space{
+    padding:  8rem;
+}
+
 .obj-width{
     max-width: 1200px;
     margin: auto;
@@ -18,6 +34,12 @@
 
 header{
     background-color: hwb(0 0% 100% / 0.37);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width:100%;
+    z-index:999;
+
 }
 #navbar{
     display: flex;
@@ -36,7 +58,7 @@ header{
     list-style: none;
 }
 #menu li a{
-    color: bisque;
+    color:black;
     text-decoration: none;
     margin-left: 50px;
     font-size: 1.1rem;
@@ -47,6 +69,49 @@ header{
     color: black;
     display: none;
 }
+/* hero */
+.hero{
+    background-color:grey;
+}
+.hero-box{
+    display:flex;
+    justify-content: space-between;
+    height: 100vh;
+    align-items:center;
+}
+.h-left p{
+    padding: 1.5rem 0;
+}
+.search{
+    position: relative;
+}
+search input{
+    width: 95%;
+    height: 3.5rem;
+    border-radius: 35px;
+    padding: 0 20px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+.search a{
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+.h-left{
+    width:45%;
+    color:black ;
+}
+.h-right{
+    width: 50%;
+}
+.h-right img{
+    width: 100%;
+    object-fit: cover;
+
+}
+
 
 @media (max-width: 699px){
     #menu {
@@ -72,7 +137,7 @@ header{
     padding: 1rem;
 }
 #menu li a{
-    color: bisque;
+    color:black;
 }
 #bar{
     display: block;
@@ -84,6 +149,20 @@ header{
     background: white;
     color: black;
 }
+.hero-box{
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: auto;
+    align-items:start;
+    padding:8rem 0;
+}
+.h-left{
+    width: 100%;
+}
+.h-right{
+    display: none;
+}
+
 }
 
 body {
