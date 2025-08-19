@@ -111,7 +111,21 @@ search input{
     object-fit: cover;
 
 }
+.features .fe-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+.features .fe-box div{
+    width: 200px;
+}
+
+.features .fe-box img{
+    width: 50px;
+    margin-top:3rem;
+}
 
 @media (max-width: 699px){
     #menu {
@@ -160,7 +174,10 @@ search input{
     width: 100%;
 }
 .h-right{
-    display: none;
+    display:none;
+}
+.features .fe-box div{
+    width:40%;
 }
 
 }
