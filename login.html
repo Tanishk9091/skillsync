@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+      <header>
+        <div id="navbar" class="obj-width">
+            <a href="start.html"><img class="logo" src="https://taptalent.ai/wp-content/uploads/2025/07/skill-sync-pty-ltd-recruitment-agency-profile.jpg" alt="logo of site"></a>
+            <ul id="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Browse Jobs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                <a href="main.html">
+                <button id="w-btn">Join</button>
+                 </a>
+                </li>
+            </ul>
+
+            <i id="bar"class='bx bx-menu'></i>
+        </div>
+    </header>
+     <section class="hero">
+        <div class="hero-box obj-width">
+            <div class="h-left">
+                <h2>Find the perfect freelance services for your business.</h2>
+                <p>Work with talented people at the most affordable price to get the most out of your time and cost.</p>
+                <div class="search">
+                    <input type="text" placeholder="search your job here..">
+                    <a id="g-btn"href="#">Search</a>
+                </div>
+            </div>
+            <div class="h-right">
+                <img src="image.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="features">
+        <h2>Need something done?</h2>
+        <p>
+            Most viewed and all time top-selling services.
+        </p>
+        <div class="fe-box">
+            <div></div>
+
+        </div>
+    </section>
+    <section class="features sec-space
+    obj-width">
+        <h2>Need something done?</h2>
+        <p>
+            Most viewed and all time top-selling services.
+            top-selling services
+        </p>
+        <div class="fe-box">
+            <div>
+                <img src="images/fe 1.png"
+                alt="">
+                <h3>Post a job</h3>
+                <p>It's free and easy to
+                    post a job.Simply fill in a 
+                    title, description.
+                </p>
+            </div>
+            <div>
+                <img src="images/fe 2.png"
+                alt="">
+                <h3>Choose freelancers</h3>
+                <p>It's free and easy to
+                    post a job.Simply fill in a 
+                    title, description.
+                </p>
+            </div>
+            <div>
+                <img src="images/fe 3.png"
+                alt="">
+                <h3>Pay safely</h3>
+                <p>It's free and easy to
+                    post a job.Simply fill in a 
+                    title, description.
+                </p>
+            </div>
+            <div>
+                <img src="images/fe 4.png"
+                alt="">
+                <h3>We're here to help</h3>
+                <p>It's free and easy to
+                    post a job.Simply fill in a 
+                    title, description.
+                </p>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <section class="jobs sec-space
+    obj-width">
+        <h2>Jobs in demand</h2>
+        <p>Most viewed and all-time
+            top-selling services
+        </p>
+
+        <ul class="job-id">
+            <li>Recent Jobs</li>
+            <li>Freelancer</li>
+            <li>Full Time</li>
+            <li>Part Time</li>
+        </ul>
+
+        <div class="jobs-container">
+            <li data- class="jlist">
+                <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png
+                 alt="" height="50px"width="50px">
+                 <h3>Web Developer</h3>
+                 <p>$900-1200</p>
+                 <span id="key">Full Time</span>
+
+            </li>
+
+        </div>
+
+     </section>
+
+    <main>
+        <div id="login-section" class="container fade fade-in">
+            <h3>Login To Your Account</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" placeholder="Enter Your Email" id="login-email" required>
+                    <div class="error-message" id="login-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" placeholder="Enter your Password" id="login-password" required>
+                    <div class="error-message" id="login-password-error"></div>
+                </div>
+                <button type="submit" class="form-btn">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="show-signup">Sign up here</a></p>
+            </form>
+        </div>
+
+        <div id="signup-section" class="container fade">
+            <h3>Create Your Account</h3>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-fullname">Full Name</label>
+                    <input type="text" id="signup-fullname" placeholder="Enter your full name" required>
+                    <div class="error-message" id="signup-fullname-error"></div>
+                </div>
+                <div class="form-group"> 
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    <div class="error-message" id="signup-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Enter your password" required>
+                    <small class="form-help-text">Password must be at least 8 characters long</small>
+                    <div class="error-message" id="signup-password-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm your password" required>
+                    <div class="error-message" id="signup-confirm-error"></div>
+                </div>
+                <button type="submit" class="form-btn">Sign Up</button>
+                <p class="form-footer">Already have an account? <a href="#" id="show-login">Login here</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="login.js">
+    </script>
+</body>
+</html> 
