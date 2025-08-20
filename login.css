@@ -1,30 +1,30 @@
 /* GLOBAL STYLES */
 /* These styles apply across the entire site */
-#w-btn{
+#w-btn {
     margin-left: 40px;
-    background:black;
+    background: black;
     color: white;
-    padding : 9px 30px;
+    padding: 9px 30px;
     border-radius: 18px;
     font-size: 0.9rem;
     font-weight: 100;
-    box-shadow:none;
+    box-shadow: none;
 }
-#g-btn{
+#g-btn {
     text-decoration: none;
-    background-color:black;
+    background-color: black;
     color: white;
     padding: 9px 30px;
-    border-radius:20px;
+    border-radius: 20px;
     cursor: pointer;
 }
-.sec-space{
+.sec-space {
     padding: 4rem 0;
 }
-.extra-space{
+.extra-space {
     padding: 8rem;
 }
-.obj-width{
+.obj-width {
     max-width: 1200px;
     margin: auto;
 }
@@ -36,21 +36,21 @@ body {
 }
 
 /* NAVBAR AND HEADER */
-header{
+header {
     background-color: hwb(0 0% 100% / 0.37);
     position: fixed;
     top: 0;
     right: 0;
-    width:100%;
-    z-index:999;
+    width: 100%;
+    z-index: 999;
 }
-#navbar{
+#navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
 }
-#navbar .logo{
+#navbar .logo {
     width: 120px;
     height: 80px;
 }
@@ -60,35 +60,35 @@ header{
     align-items: center;
     list-style: none;
 }
-#menu li a{
-    color:black;
+#menu li a {
+    color: black;
     text-decoration: none;
     margin-left: 50px;
     font-size: 1.1rem;
     font-weight: 500;
 }
-#bar{
+#bar {
     color: black;
     display: none;
 }
 
 /* HERO SECTION */
-.hero{
-    background-color:grey;
+.hero {
+    background-color: grey;
 }
-.hero-box{
-    display:flex;
+.hero-box {
+    display: flex;
     justify-content: space-between;
     height: 100vh;
-    align-items:center;
+    align-items: center;
 }
-.h-left p{
+.h-left p {
     padding: 1.5rem 0;
 }
-.search{
+.search {
     position: relative;
 }
-.search input{
+.search input {
     width: 95%;
     height: 3.5rem;
     border-radius: 35px;
@@ -97,59 +97,64 @@ header{
     outline: none;
     border: none;
 }
-.search a{
+.search a {
     position: absolute;
     top: 12px;
     right: 20px;
 }
-.h-left{
-    width:45%;
-    color:black ;
+.h-left {
+    width: 45%;
+    color: black;
 }
-.h-right{
+.h-right {
     width: 50%;
 }
-.h-right img{
+.h-right img {
     width: 100%;
     object-fit: cover;
 }
-.features .fe-box{
+.features .fe-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-.features .fe-box div{
+.features .fe-box div {
     width: 200px;
 }
-.features .fe-box img{
+.features .fe-box img {
     width: 50px;
-    margin-top:3rem;
+    margin-top: 3rem;
 }
 
-<<<<<<< HEAD
-.job .job-id{
+/* JOBS SECTION */
+.job .job-id {
     margin-top: 3rem;
-    display: flex ;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1)
-
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-
-.job .job-id li{
+.job .job-id::-webkit-scrollbar {
+    display: none;
+}
+.job .job-id li {
     padding: 20px 40px;
     cursor: pointer;
     color: #000;
+    text-wrap: nowrap;
 }
-
-.job .job-id li.active{
+.job .job-id li.active {
     background-color: #51a995;
-    color: #fff; 
+    color: #fff;
 }
-
-.jobs .jlist{
+.jobs .jlist {
     margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -159,46 +164,42 @@ header{
     cursor: pointer;
     color: #000;
     padding: 2rem 2rem;
-
 }
-
-.jobs .jlist.delete{
+.jobs .jlist.delete {
     display: none;
 }
-
-
-.jobs .jlist:hover{
+.jobs .jlist:hover {
     background: #ecf1ee;
 }
-
-.jobs .jlist img{
+.jobs .jlist img {
     width: 40px;
 }
-
-.jobs .jlist h3{
-     padding-bottom: 0;
-  
+.jobs .jlist h3 {
+    padding-bottom: 0;
+}
+.jobs-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
-.trust .t-box{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
+.trust .t-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     padding-top: 3rem;
 }
-
-.trust .t-box img{
-    margin: 1rem 1rem 1rem 0
+.trust .t-box img {
+    margin: 1rem 1rem 1rem 0;
 }
-
-.team-container{
+.team-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-
-.team-container .fL-box{
+.team-container .fL-box {
     border: 1px solid #c1e1d9;
     width: 280px;
     padding: 2rem 0;
@@ -209,31 +210,26 @@ header{
     justify-content: center;
     align-items: center;
 }
-
-.fl-box img{
+.fl-box img {
     font-size: 50%;
     margin-bottom: 1rem;
-
 }
-
-.skill{
+.skill {
     padding-bottom: 3rem;
 }
-
-#key{
+#key {
     font-size: 0.8rem;
     background-color: #edcfee;
     padding: 10px 20px;
     border-radius: 20px;
 }
 
-/*footer*/
-footer{
+/* FOOTER */
+footer {
     background: #1f4a40;
     color: #fff;
     padding: 4rem 0;
 }
-
 .top {
     display: flex;
     align-items: center;
@@ -241,100 +237,31 @@ footer{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
-.top .logo{
+.top .logo {
     width: 170px;
     margin-bottom: 1rem;
 }
-
 .top i {
-    color:#fff;
+    color: #fff;
     font-size: 2rem;
     margin-left: 0.5rem;
 }
-
-.bottom{
+.bottom {
     padding-top: 2rem;
     text-align: start;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
-.bottom div{
+.bottom div {
     display: flex;
     flex-direction: column;
 }
-
-.bottom a{
+.bottom a {
     text-decoration: none;
     color: #fafafa;
     line-height: 35px;
     font-size: 1.1rem;
-}
-
-
-
-@media(max-width: 1200px){
-    .obj-width{
-        width: 95%;
-    }
-}
-
-=======
-/* RESPONSIVE STYLES (for smaller screens) */
->>>>>>> ded6402 (some changes)
-@media (max-width: 699px){
-    #menu {
-        background-color: black;
-        display:block;
-        width: 280px;
-        height: auto;
-        position:absolute;
-        top: 80px;
-        right: -300%;
-        padding: 30px 0;
-        box-shadow: 0px 2px 10px black;
-        border-radius: 13px;
-        opacity: 0;
-        transition: all 0.3s ease;
-    } 
-    #menu.active{
-        right:0px;
-        opacity: 1;
-    }
-    #menu li {
-        padding: 1rem;
-    }
-    #menu li a{
-        color:black;
-    }
-    #bar{
-        display: block;
-        font-size: 1.7rem;
-        cursor: pointer;
-    }
-    #w-btn{
-        margin: 20px 0 0 50px;
-        background: white;
-        color: black;
-    }
-    .hero-box{
-        flex-direction: column-reverse;
-        justify-content: center;
-        height: auto;
-        align-items:start;
-        padding:8rem 0;
-    }
-    .h-left{
-        width: 100%;
-    }
-    .h-right{
-        display:none;
-    }
-    .features .fe-box div{
-        width:40%;
-    }
 }
 
 /* AUTHENTICATION FORM STYLES */
@@ -448,83 +375,93 @@ input:focus {
     opacity: 1;
 }
 
-<<<<<<< HEAD
-.jobs .job-id{
-    position: relative;
-    width: 100%;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+/* RESPONSIVE STYLES (for smaller screens) */
+@media (max-width: 1200px) {
+    .obj-width {
+        width: 95%;
+    }
 }
-.jobs .job-id li{
-    padding: 20px 30px;
-    text-wrap: nowrap;
-}
-
-.jobs-container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.jobs .jList{
-    width: 48%;
-    margin-top: 1rem;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 15px;
-    padding: 2rem 1rem;
-    text-align: center;
-    justify-items: center;
-}
-
-
-.team-container .fl-box{
-    width: 48%;
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 1rem;
-}
-
-.skill{
-    padding-bottom: 1rem;
-}
-
-/*footer*/
-
-.top i{
-    margin: 1rem 1rem 0 0;
-}
-
-.bottom div{
-    width: 50%;
-    margin-bottom: 50px;
-}
-
-=======
-/* JOBS SECTION */
-.jobs {
-    margin-top: 3rem;
-    width: 100%;
-    border: 1px solid grey;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem;
->>>>>>> ded6402 (some changes)
-}
-.jobs h2 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-.jobs p {
-    font-size: 1rem;
-    color: #666;
-    margin-top: -1rem;
-}
-.jobs form {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
+@media (max-width: 699px) {
+    #menu {
+        background-color: black;
+        display: block;
+        width: 280px;
+        height: auto;
+        position: absolute;
+        top: 80px;
+        right: -300%;
+        padding: 30px 0;
+        box-shadow: 0px 2px 10px black;
+        border-radius: 13px;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    #menu.active {
+        right: 0px;
+        opacity: 1;
+    }
+    #menu li {
+        padding: 1rem;
+    }
+    #menu li a {
+        color: white;
+    }
+    #bar {
+        display: block;
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+    #w-btn {
+        margin: 20px 0 0 50px;
+        background: white;
+        color: black;
+    }
+    .hero-box {
+        flex-direction: column-reverse;
+        justify-content: center;
+        height: auto;
+        align-items: start;
+        padding: 8rem 0;
+    }
+    .h-left {
+        width: 100%;
+    }
+    .h-right {
+        display: none;
+    }
+    .features .fe-box div {
+        width: 40%;
+    }
+    .jobs-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+    .jobs .jlist {
+        width: 48%;
+        margin-top: 1rem;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 15px;
+        padding: 2rem 1rem;
+        text-align: center;
+        justify-items: center;
+    }
+    .team-container .fl-box {
+        width: 48%;
+        text-align: center;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+    .skill {
+        padding-bottom: 1rem;
+    }
+    /*footer*/
+    .top i {
+        margin: 1rem 1rem 0 0;
+    }
+    .bottom div {
+        width: 50%;
+        margin-bottom: 50px;
+    }
 }
