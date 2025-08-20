@@ -161,6 +161,11 @@ search input{
 
 }
 
+.jobs .jlist.delete{
+    display: none;
+}
+
+
 .jobs .jlist:hover{
     background: #ecf1ee;
 }
@@ -226,6 +231,18 @@ search input{
 }
 .features .fe-box div{
     width:40%;
+}
+
+.jobs .job-id{
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.jobs .job-id li{
+    padding: 20px 30px;
+    text-wrap: nowrap;
 }
 
 }
