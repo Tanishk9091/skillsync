@@ -148,6 +148,16 @@ search input{
     color: #fff; 
 }
 
+.jobs .jlist{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.jobs .jlist img{
+    width: 40px;
+}
+
 
 @media (max-width: 699px){
     #menu {
