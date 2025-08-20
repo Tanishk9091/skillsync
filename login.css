@@ -179,6 +179,104 @@ search input{
   
 }
 
+.trust .t-box{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    padding-top: 3rem;
+}
+
+.trust .t-box img{
+    margin: 1rem 1rem 1rem 0
+}
+
+.team-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.team-container .fL-box{
+    border: 1px solid #c1e1d9;
+    width: 280px;
+    padding: 2rem 0;
+    border-radius: 20px;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fl-box img{
+    font-size: 50%;
+    margin-bottom: 1rem;
+
+}
+
+.skill{
+    padding-bottom: 3rem;
+}
+
+#key{
+    font-size: 0.8rem;
+    background-color: #edcfee;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/*footer*/
+footer{
+    background: #1f4a40;
+    color: #fff;
+    padding: 4rem 0;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    text-align: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.top .logo{
+    width: 170px;
+    margin-bottom: 1rem;
+}
+
+.top i {
+    color:#fff;
+    font-size: 2rem;
+    margin-left: 0.5rem;
+}
+
+.bottom{
+    padding-top: 2rem;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.bottom div{
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom a{
+    text-decoration: none;
+    color: #fafafa;
+    line-height: 35px;
+    font-size: 1.1rem;
+}
+
+@media(max-width: 1200px){
+    .obj-width{
+        width: 95%;
+    }
+}
 
 @media (max-width: 699px){
     #menu {
@@ -243,6 +341,46 @@ search input{
 .jobs .job-id li{
     padding: 20px 30px;
     text-wrap: nowrap;
+}
+
+.jobs-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.jobs .jList{
+    width: 48%;
+    margin-top: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
+    padding: 2rem 1rem;
+    text-align: center;
+    justify-items: center;
+}
+
+
+.team-container .fl-box{
+    width: 48%;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.skill{
+    padding-bottom: 1rem;
+}
+
+/*footer*/
+
+.top i{
+    margin: 1rem 1rem 0 0;
+}
+
+.bottom div{
+    width: 50%;
+    margin-bottom: 50px;
 }
 
 }
