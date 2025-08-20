@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <main>
+        <div id="login-section" class="container fade fade-in">
+            <h3>Login To Your Account</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" placeholder="Enter Your Email" id="login-email" required>
+                    <div class="error-message" id="login-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" placeholder="Enter your Password" id="login-password" required>
+                    <div class="error-message" id="login-password-error"></div>
+                </div>
+                <button type="submit" class="form-btn">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="show-signup">Sign up here</a></p>
+            </form>
+        </div>
+
+        <div id="signup-section" class="container fade">
+            <h3>Create Your Account</h3>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-fullname">Full Name</label>
+                    <input type="text" id="signup-fullname" placeholder="Enter your full name" required>
+                    <div class="error-message" id="signup-fullname-error"></div>
+                </div>
+                <div class="form-group"> 
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    <div class="error-message" id="signup-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Enter your password" required>
+                    <small class="form-help-text">Password must be at least 8 characters long</small>
+                    <div class="error-message" id="signup-password-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm your password" required>
+                    <div class="error-message" id="signup-confirm-error"></div>
+                </div>
+                <button type="submit" class="form-btn">Sign Up</button>
+                <p class="form-footer">Already have an account? <a href="#" id="show-login">Login here</a></p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
