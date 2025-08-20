@@ -152,10 +152,26 @@ search input{
     margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    border: 1px solid #ccc;
+    align-items: center;
+    justify-items: start;
+    cursor: pointer;
+    color: #000;
+    padding: 2rem 2rem;
+
+}
+
+.jobs .jlist:hover{
+    background: #ecf1ee;
 }
 
 .jobs .jlist img{
     width: 40px;
+}
+
+.jobs .jlist h3{
+     padding-bottom: 0;
+  
 }
 
 
