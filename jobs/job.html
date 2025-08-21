@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../login.css">
 </head>
 <body>
 
       <header>
         <div id="navbar" class="obj-width">
-            <a href="start.html"><img class="logo" src="https://taptalent.ai/wp-content/uploads/2025/07/skill-sync-pty-ltd-recruitment-agency-profile.jpg" alt="logo of site"></a>
+            <a href="../login.html"><img class="logo" src="https://taptalent.ai/wp-content/uploads/2025/07/skill-sync-pty-ltd-recruitment-agency-profile.jpg" alt="logo of site"></a>
             <ul id="menu">
-                <li><a href="">Home</a></li>
+                <li><a href="../login.html">Home</a></li>
                 <li><a href="">Browse Jobs</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="#login-section" id="w-btn">Join</a></li>
@@ -24,41 +24,26 @@
             <i id="bar"class='bx bx-menu'></i>
         </div>
     </header>
-     
 
 
+
+    <section class="jobs sec-space obj-width extra-space">
+    <h2>Jobs in demand</h2>
+    <p>
+        Most viewed and all-time top-selling services
+    </p>
     
-
-    <section class="jobs sec-space
-    obj-width">
-        <h2>Jobs in demand</h2>
-        <p>Most viewed and all-time
-            top-selling services
-        </p>
-
-        <ul class="job-id">
-            <li>Recent Jobs</li>
-            <li>Freelancer</li>
-            <li>Full Time</li>
-            <li>Part Time</li>
-        </ul>
-
-        <div class="jobs-container">
-            <li data- class="jlist">
-                <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png
-                 alt="" height="50px"width="50px">
-                 <h3>Web Developer</h3>
-                 <p>$900-1200</p>
-                 <span id="key">Full Time</span>
-
-            </li>
-
+    <form>
+        <i class='bx bx-search'></i>
+        <input type="text" placeholder="Search Jobs.." id="searchBar">
+    </form>
+    
+    
+    <div class="jobs-container" id="root">
         </div>
+        
+</section>
 
-     </section>
-
-
-      
 
      <footer class="footer">
         <div class="obj-width">
@@ -106,8 +91,10 @@
             </div>
 
      </footer>
-    <script src="script.js"></script>
-    <script src="login.js">
-    </script> 
+
+
+    
+    <script src="job-list.js"></script>
+    <script src="Jobsearch.js"></script> 
 </body>
 </html> 

@@ -10,14 +10,23 @@
     font-weight: 100;
     box-shadow: none;
 }
+
 #g-btn {
     text-decoration: none;
-    background-color: black;
+    background-color: #51a995;
     color: white;
-    padding: 9px 30px;
-    border-radius: 20px;
+    padding: 12px 28px;
+    border-radius: 50px;
     cursor: pointer;
+    font-weight: 500;
+    border: none;
+    transition: background-color 0.2s ease;
 }
+
+#g-btn:hover {
+    background-color: #418a7a;
+}
+
 .sec-space {
     padding: 4rem 0;
 }
@@ -129,9 +138,12 @@ header {
 
 /* JOBS SECTION */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /* Combined and corrected job-related styles */
 >>>>>>> 06a70da (resolved syntax erros in login.css)
+=======
+>>>>>>> 140b4d4 (basic chnages and job page aded)
 .job .job-id {
     margin-top: 3rem;
     display: flex;
@@ -162,27 +174,49 @@ header {
     color: #fff;
 }
 .jobs .jlist {
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px solid #ccc;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-items: start;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     color: #000;
-    padding: 2rem 2rem;
-}
-.jobs .jlist.delete {
-    display: none;
 }
 .jobs .jlist:hover {
     background: #ecf1ee;
 }
 .jobs .jlist img {
-    width: 40px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 1.5rem;
 }
 .jobs .jlist h3 {
-    padding-bottom: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #a68d6c;
+}
+.jobs .jlist p {
+    margin: 0;
+    color: #a68d6c;
+}
+.jobs .jlist span#key {
+    margin-left: auto;
+    font-size: 0.8rem;
+    background-color: #edcfee;
+    padding: 10px 20px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.jobs .jlist.delete {
+    display: none;
 }
 <<<<<<< HEAD
 .jobs-container {
@@ -190,22 +224,77 @@ header {
 .jobs .jobs-container {
 >>>>>>> 06a70da (resolved syntax erros in login.css)
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
     margin-top: 2rem;
 <<<<<<< HEAD
 }
 
 =======
 }
-.jobs .jlist {
-    width: 48%;
-    margin-top: 1rem;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 15px;
-    padding: 2rem 1rem;
+.jList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.jList img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1.5rem;
+}
+.jList h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    flex-grow: 1;
+}
+.jList p {
+    margin: 0 1.5rem;
+    color: #555;
+    font-weight: 500;
+}
+.jList span {
+    background-color: #f0eaff;
+    color: #8c52ff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.job-filter-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 2rem;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.job-filter-horizontal li {
+    padding: 20px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
     text-align: center;
-    justify-items: center;
+    flex-grow: 1;
+}
+.job-filter-horizontal li.active {
+    background-color: #51a995;
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.job-filter-horizontal li:hover:not(.active) {
+    background-color: #f0f0f0;
 }
 
 /* TRUST SECTION */
@@ -247,9 +336,12 @@ header {
 }
 .fl-box img {
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-size: 50%;
 =======
     /* Corrected: font-size is not a valid property for an image */
+=======
+>>>>>>> 140b4d4 (basic chnages and job page aded)
     width: 50%;
 >>>>>>> 06a70da (resolved syntax erros in login.css)
     margin-bottom: 1rem;
@@ -419,6 +511,132 @@ input:focus {
     opacity: 1;
 }
 
+/*Browse Jobs*/
+.jobs form {
+    margin-top: 3rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 0.25rem;
+}
+.jobs form i{
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #888;
+}
+.jobs form input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    background: transparent;
+}
+
+/* --- UPDATED JOB DETAILS PAGE SECTION --- */
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fcfa;
+    border: 1px solid #e0f0e8;
+    border-radius: 25px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.job-img-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.job-header img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+
+.job-img-row h2 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.job-img-row span {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* --- NEW STYLES FOR JOB DETAILS FEATURES (Vacancy, Position, etc.) --- */
+#jobDetails .features {
+    border-top: 1px solid #eee; /* Adds a separator line */
+    /* Using !important to ensure this overrides the general .sec-space padding */
+    padding-top: 2.5rem !important;
+    margin-top: 2.5rem;
+}
+
+#jobDetails .features .fe-box {
+    display: flex;
+    justify-content: space-around; /* This spaces the 4 items out evenly */
+    align-items: flex-start;
+    text-align: center; /* This centers the icon and text within each box */
+}
+
+#jobDetails .features .fe-box > div {
+    width: 200px;
+}
+
+#jobDetails .features .fe-box img {
+    width: 45px;
+    height: 45px;
+    margin-top: 0; /* Reset margin from other .features style */
+    margin-bottom: 1rem;
+    /* This filter makes your existing images gray to match the design */
+    filter: grayscale(1) opacity(0.6);
+}
+
+#jobDetails .features .fe-box h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+#jobDetails .features .fe-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* --- NEW STYLES FOR JOB DESCRIPTION TEXT --- */
+.job-description {
+    padding-top: 2rem;
+}
+
+.job-description h3 {
+    /* Overriding the global 'bisque' color from your auth form styles */
+    color: #333; 
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    /* Resetting text-align for left alignment */
+    text-align: left; 
+}
+
+.job-description p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
 /* RESPONSIVE STYLES (for smaller screens) */
 @media (max-width: 1200px) {
     .obj-width {
@@ -512,10 +730,13 @@ input:focus {
         padding-bottom: 1rem;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     /*footer*/
 =======
     /* Footer styles for mobile */
 >>>>>>> 06a70da (resolved syntax erros in login.css)
+=======
+>>>>>>> 140b4d4 (basic chnages and job page aded)
     .top i {
         margin: 1rem 1rem 0 0;
     }
