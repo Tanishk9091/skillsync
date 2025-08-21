@@ -137,13 +137,8 @@ header {
 }
 
 /* JOBS SECTION */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 /* Combined and corrected job-related styles */
->>>>>>> 06a70da (resolved syntax erros in login.css)
-=======
->>>>>>> 140b4d4 (basic chnages and job page aded)
 .job .job-id {
     margin-top: 3rem;
     display: flex;
@@ -157,12 +152,10 @@ header {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-<<<<<<< HEAD
 .job .job-id::-webkit-scrollbar {
     display: none;
 }
-=======
->>>>>>> 06a70da (resolved syntax erros in login.css)
+
 .job .job-id li {
     padding: 20px 40px;
     cursor: pointer;
@@ -218,19 +211,13 @@ header {
 .jobs .jlist.delete {
     display: none;
 }
-<<<<<<< HEAD
 .jobs-container {
-=======
-.jobs .jobs-container {
->>>>>>> 06a70da (resolved syntax erros in login.css)
+.jobs.jobs-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-top: 2rem;
-<<<<<<< HEAD
 }
-
-=======
 }
 .jList {
     display: flex;
@@ -298,7 +285,7 @@ header {
 }
 
 /* TRUST SECTION */
->>>>>>> 06a70da (resolved syntax erros in login.css)
+
 .trust .t-box {
     display: flex;
     align-items: center;
@@ -308,22 +295,18 @@ header {
 .trust .t-box img {
     margin: 1rem 1rem 1rem 0;
 }
-<<<<<<< HEAD
-=======
+
 
 /* TEAM SECTION */
->>>>>>> 06a70da (resolved syntax erros in login.css)
+
 .team-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-<<<<<<< HEAD
-.team-container .fL-box {
-=======
+
 .team-container .fl-box {
->>>>>>> 06a70da (resolved syntax erros in login.css)
     border: 1px solid #c1e1d9;
     width: 280px;
     padding: 2rem 0;
@@ -335,15 +318,11 @@ header {
     align-items: center;
 }
 .fl-box img {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     font-size: 50%;
-=======
+
     /* Corrected: font-size is not a valid property for an image */
-=======
->>>>>>> 140b4d4 (basic chnages and job page aded)
     width: 50%;
->>>>>>> 06a70da (resolved syntax erros in login.css)
     margin-bottom: 1rem;
 }
 .skill {
@@ -356,11 +335,6 @@ header {
     border-radius: 20px;
 }
 
-<<<<<<< HEAD
-/* FOOTER */
-=======
-/* FOOTER SECTION */
->>>>>>> 06a70da (resolved syntax erros in login.css)
 footer {
     background: #1f4a40;
     color: #fff;
@@ -666,11 +640,9 @@ input:focus {
         padding: 1rem;
     }
     #menu li a {
-<<<<<<< HEAD
+
         color: white;
-=======
         color: black;
->>>>>>> 06a70da (resolved syntax erros in login.css)
     }
     #bar {
         display: block;
@@ -698,13 +670,12 @@ input:focus {
     .features .fe-box div {
         width: 40%;
     }
-<<<<<<< HEAD
-=======
+
     .jobs .job-id li {
         padding: 20px 30px;
         text-wrap: nowrap;
     }
->>>>>>> 06a70da (resolved syntax erros in login.css)
+
     .jobs-container {
         display: flex;
         justify-content: space-between;
@@ -729,14 +700,10 @@ input:focus {
     .skill {
         padding-bottom: 1rem;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     /*footer*/
-=======
+
     /* Footer styles for mobile */
->>>>>>> 06a70da (resolved syntax erros in login.css)
-=======
->>>>>>> 140b4d4 (basic chnages and job page aded)
     .top i {
         margin: 1rem 1rem 0 0;
     }
