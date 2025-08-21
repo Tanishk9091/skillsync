@@ -221,6 +221,8 @@ header {
 }
 .jList {
     display: flex;
+    margin-top: 15px;
+    margin-bottom: 20px;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.5rem;

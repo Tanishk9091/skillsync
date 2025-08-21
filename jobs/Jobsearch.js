@@ -1,4 +1,3 @@
-alert("Jobsearch.js is running!");
 const categories = Array.from(jCategory);
 
 // Search bar logic
