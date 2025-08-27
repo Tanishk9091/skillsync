@@ -138,8 +138,8 @@ header {
     color: #000;
 }
 
-/* HERO SECTION */
 
+/* HERO SECTION */
 .hero {
     color: var(--text-light); /* Currently white, you can change to a specific color or another variable */
     
@@ -204,17 +204,19 @@ header {
     object-fit: cover;
 }
 
-/* --- FEATURES SECTION --- */
+/* --- FEATURES SECTION (UPDATED FOR 2X2 GRID) --- */
 .features .fe-box {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* Makes cards same height */
-    flex-wrap: wrap;
-    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap; /* This allows the cards to form rows */
+    gap: 2rem; /* This creates space between cards, both horizontally and vertically */
 }
 
 .features .fe-box > div {
-    width: calc(25% - 1.5rem);
+    /* Each card takes up ~45% of the container width to fit two per row */
+    flex-basis: 45%;
+    max-width: 400px; /* Optional: prevents cards from getting too wide */
+    
     background: #fff;
     padding: 2rem;
     border-radius: 15px;
@@ -241,8 +243,8 @@ header {
 
 
 /* JOBS SECTION */
+/* (The rest of your CSS remains the same) */
 
-/* Combined and corrected job-related styles */
 .job .job-id {
     margin-top: 3rem;
     display: flex;
