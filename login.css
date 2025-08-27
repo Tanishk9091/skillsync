@@ -1,34 +1,46 @@
 /* GLOBAL STYLES */
 /* These styles apply across the entire site */
 #w-btn {
-    margin-left: 40px;
-    background: black;
-    color: white;
-    padding: 9px 30px;
-    border-radius: 18px;
-    font-size: 0.9rem;
-    font-weight: 100;
-    box-shadow: none;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 92, 151, 0.2);
+    transition: all 0.3s ease;
+}
+#w-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 92, 151, 0.3);
 }
 
 #g-btn {
     text-decoration: none;
-    background-color: #51a995;
-    color: white;
+    background-color: var(--accent-color); /* Uses the yellow from our color palette */
+    color: yellow;
     padding: 12px 28px;
     border-radius: 50px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
     border: none;
-    transition: background-color 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 #g-btn:hover {
-    background-color: #418a7a;
+    background-color: #ffc43b;
+    
+}
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem; /* INCREASED - This makes the logo bigger. You can change 2.2 to any number. */
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none; /* IMPORTANT - This is the line that removes the underline. */
+    letter-spacing: -1px;
 }
 
 .sec-space {
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 .extra-space {
     padding: 8rem;
@@ -36,22 +48,37 @@
 .obj-width {
     max-width: 1200px;
     margin: auto;
+    padding: 0 20px;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #f5f5f5;
-    min-height: 100vh;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+p {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
 }
 
 /* NAVBAR AND HEADER */
 header {
-    background-color: hwb(0 0% 100% / 0.37);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 #navbar {
     display: flex;
@@ -61,80 +88,132 @@ header {
 }
 #navbar .logo {
     width: 120px;
-    height: 80px;
+    height: auto;
 }
 #menu {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     list-style: none;
+    margin: 0;
 }
 #menu li a {
-    color: black;
+    color: var(--text-dark);
     text-decoration: none;
     margin-left: 50px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+#menu li a:hover {
+    color: var(--primary-color);
 }
 #bar {
     color: black;
     display: none;
+    font-size: 1.8rem;
 }
 
 /* HERO SECTION */
+
 .hero {
-    background-color: grey;
+    color: var(--text-light); /* Currently white, you can change to a specific color or another variable */
+    
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2068&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 .hero-box {
     display: flex;
-    justify-content: space-between;
-    height: 100vh;
     align-items: center;
 }
+.h-left h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
 .h-left p {
-    padding: 1.5rem 0;
+    text-align: left;
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-left: 0;
+    color: rgba(255, 255, 255, 0.8);
 }
 .search {
     position: relative;
+    max-width: 500px;
 }
 .search input {
-    width: 95%;
+    color: #333;
+    width: 100%;
     height: 3.5rem;
-    border-radius: 35px;
-    padding: 0 20px;
+    border-radius: 35px; 
+    padding: 0 25px;     
     font-size: 1rem;
     outline: none;
-    border: none;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}
+.search input::placeholder {
+    color: #555; 
+    opacity: 1;
 }
 .search a {
-    position: absolute;
-    top: 12px;
-    right: 20px;
+    position: absolute;       
+    top: 50%;                   
+    transform: translateY(-50%);
 }
 .h-left {
-    width: 45%;
-    color: black;
+    width: 40%;
+    color: whitesmoke;
 }
 .h-right {
     width: 50%;
+    display: none;
 }
 .h-right img {
     width: 100%;
     object-fit: cover;
 }
+
+/* --- FEATURES SECTION --- */
 .features .fe-box {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch; /* Makes cards same height */
     flex-wrap: wrap;
+    gap: 2rem;
 }
-.features .fe-box div {
-    width: 200px;
+
+.features .fe-box > div {
+    width: calc(25% - 1.5rem);
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: all 0.3s ease;
 }
+
+.features .fe-box > div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
 .features .fe-box img {
-    width: 50px;
-    margin-top: 3rem;
+    width: 60px;
+    margin-bottom: 1.5rem;
 }
+
+.features .fe-box h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
 
 /* JOBS SECTION */
 
@@ -286,55 +365,112 @@ header {
     background-color: #f0f0f0;
 }
 
-/* TRUST SECTION */
-
-.trust .t-box {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 3rem;
+/* --- TRUSTED BY SECTION --- */
+.trust {
+    background-color: #ffffff; /* Give the section a clean white background */
 }
-.trust .t-box img {
-    margin: 1rem 1rem 1rem 0;
+
+.trusted-logos {
+    display: flex;
+    justify-content: space-around; /* Space logos out evenly */
+    align-items: center; /* Vertically align logos */
+    flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+    gap: 2rem; /* Space between logos */
+    margin-top: 4rem;
+}
+
+.trusted-logos img {
+    height: 45px; /* Set a uniform height for all logos */
+    max-width: 150px; /* Prevent wide logos from being too large */
+    object-fit: contain;
+    filter: grayscale(100%); /* Make logos grayscale for a uniform look */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.trusted-logos img:hover {
+    filter: grayscale(0%); /* Bring logo to full color on hover */
+    opacity: 1;
+    transform: scale(1.1); /* Slightly enlarge logo on hover */
 }
 
 
 /* TEAM SECTION */
 
+/* --- FREELANCER TEAM SECTION --- */
 .team-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* Center the cards */
     flex-wrap: wrap;
-}
-
-.team-container .fl-box {
-    border: 1px solid #c1e1d9;
-    width: 280px;
-    padding: 2rem 0;
-    border-radius: 20px;
+    gap: 2rem; /* Space between cards */
     margin-top: 3rem;
+}
+
+.freelancer-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    width: 280px;
+    padding: 2rem;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    transition: all 0.3s ease;
 }
-.fl-box img {
 
-    font-size: 50%;
+.freelancer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
 
-    /* Corrected: font-size is not a valid property for an image */
-    width: 50%;
-    margin-bottom: 1rem;
+.freelancer-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image a circle */
+    object-fit: cover; /* Prevents image from stretching */
+    margin-bottom: 1.5rem;
+    border: 4px solid #f0f0f0;
 }
-.skill {
-    padding-bottom: 3rem;
+
+.freelancer-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
-#key {
-    font-size: 0.8rem;
-    background-color: #edcfee;
-    padding: 10px 20px;
+
+.skill-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.skill-tags span {
+    background-color: #f0eaff;
+    color: #8c52ff;
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.profile-btn {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 10px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+    width: 100%; /* Make button full width of padding */
+}
+
+.profile-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 footer {
