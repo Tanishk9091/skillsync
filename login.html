@@ -245,5 +245,49 @@
      </footer>
      <script src="jobs/job-list.js"></script>
      <script src="jobs/Jobsearch.js"></script>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menu = document.getElementById('menu');
+
+            // This function checks for a logged-in user and updates the navbar
+            const updateNavbar = () => {
+                const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+                const registerButton = document.querySelector('#w-btn');
+                
+                if (loggedInUserEmail && registerButton) {
+                    const registerLi = registerButton.parentElement; // Get the parent <li>
+                    
+                    // User is logged in, so get the username
+                    const username = loggedInUserEmail.split('@')[0];
+                    
+                    // Create the new elements for the navbar
+                    const welcomeText = document.createElement('li');
+                    welcomeText.innerHTML = `<span class="nav-username">Hi, ${username}</span>`;
+
+                    const logoutLink = document.createElement('li');
+                    logoutLink.innerHTML = `<a href="#" id="logout-btn">Logout</a>`;
+
+                    // Replace the "Register" button's list item with the new items
+                    menu.insertBefore(welcomeText, registerLi);
+                    menu.insertBefore(logoutLink, registerLi);
+                    registerLi.remove();
+                }
+            };
+
+            // This listens for a click on the "Logout" button
+            menu.addEventListener('click', (e) => {
+                if (e.target.id === 'logout-btn') {
+                    e.preventDefault();
+                    localStorage.removeItem('loggedInUserEmail');
+                    alert('You have been logged out.');
+                    // Redirect back to the login page after logout
+                    window.location.href = 'login.html';
+                }
+            });
+
+            // Run the function as soon as the homepage loads
+            updateNavbar();
+        });
+    </script>
 </body>
 </html> 
