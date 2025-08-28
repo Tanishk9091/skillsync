@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About - SkillSync</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="login.css">
+	<style>
+		/* Use site's light theme; only add lightweight layout helpers */
+		.container-page { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+		/* Override shared hero image/height from login.css */
+		.hero { padding: 5rem 0 1rem; text-align: center; background: transparent !important; height: auto !important; color: var(--text-dark); }
+		.hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.5px; margin: 0 0 10px; }
+		.sub { color: var(--text-muted); max-width: 800px; margin: 0 auto; }
+
+		.sections { display: grid; gap: 18px; margin-top: 22px; }
+		.card { background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 22px; box-shadow: 0 5px 25px rgba(0,0,0,0.07); color: var(--text-dark); }
+		.card h2 { margin: 0 0 10px; font-size: 22px; color: var(--text-dark); }
+		.card p, .card li { color: var(--text-muted); }
+		.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+		@media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } }
+		.badges { display: flex; gap: 8px; flex-wrap: wrap; }
+		.badge { padding: 6px 10px; border: 1px solid #e6e6e6; border-radius: 999px; font-size: 12px; color: var(--text-muted); background: #fff; }
+	</style>
+</head>
+<body>
+	<header>
+		<div id="navbar" class="obj-width">
+			<a class="logo-text" href="login.html">SkillSync</a>
+			<ul id="menu">
+				<li><a href="login.html">Home</a></li>
+				<li><a href="jobs/job.html">Browse Jobs</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="loginpage.html" id="w-btn">Register</a></li>
+			</ul>
+			<i id="bar" class='bx bx-menu'></i>
+		</div>
+	</header>
+
+	<main class="sec-space">
+		<div class="container-page">
+			<section class="hero">
+				<h1>About SkillSync</h1>
+				<p class="sub">SkillSync is a skills‑first job platform that helps talent get discovered for what they can do, not just where they’ve worked. We match people and roles with real skill signals, portfolios, and outcomes.</p>
+			</section>
+
+			<section class="sections">
+				<div class="card grid-2">
+					<div>
+						<h2>Our mission</h2>
+						<p>Unlock opportunity for everyone by making hiring fair, fast, and focused on skills. We believe careers grow when people can show their abilities clearly and companies can see fit beyond a resume.</p>
+					</div>
+					<div>
+						<h2>How SkillSync helps</h2>
+						<ul>
+							<li>Personalized job discovery powered by your skills</li>
+							<li>Profiles that highlight projects, certifications, and impact</li>
+							<li>Smart filters for salary, type, and flexibility</li>
+							<li>Faster screening with verified skill signals</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2>What we value</h2>
+					<div class="badges">
+						<span class="badge">Skills over titles</span>
+						<span class="badge">Clarity and fairness</span>
+						<span class="badge">Speed and simplicity</span>
+						<span class="badge">Privacy by default</span>
+						<span class="badge">Continuous learning</span>
+					</div>
+				</div>
+
+				<div class="card grid-2">
+					<div>
+						<h2>For candidates</h2>
+						<p>Showcase your real work—add projects, skills, and proof. Get matched to roles that fit you, not just your title. Apply once, get noticed faster.</p>
+					</div>
+					<div>
+						<h2>For companies</h2>
+						<p>See beyond resumes with richer profiles and verified signals. Spend less time screening and more time meeting qualified people who can deliver.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+		<div class="obj-width">© <span id="year"></span> SkillSync. All rights reserved.</div>
+	</footer>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>
