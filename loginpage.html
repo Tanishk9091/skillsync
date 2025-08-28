@@ -397,6 +397,15 @@
                 return re.test(String(email).toLowerCase());
             };
 
+            // ---SIGNUP FORM SUBMIT---
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Here you would normally post to backend, then on success:
+                localStorage.setItem('hasSignedUp', 'true');
+                showPopup('Signup successful', 'Please login to continue.');
+                setTimeout(() => { hidePopup(); switchForms(loginSection, signupSection); }, 1000);
+            });
+
             // ---LOGIN FORM SUBMIT---
             loginForm.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -416,14 +425,6 @@
                     showPopup('Login successful', 'Redirecting to home...');
                     setTimeout(() => { window.location.href = 'login.html'; }, 1200);
                 }
-            });
-            
-            // ---SIGNUP FORM SUBMIT---
-            signupForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Here you would normally post to backend, then on success:
-                showPopup('Signup successful', 'Redirecting to home...');
-                setTimeout(() => { window.location.href = 'login.html'; }, 1200);
             });
 
         });

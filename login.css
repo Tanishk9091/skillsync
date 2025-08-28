@@ -103,10 +103,18 @@ header {
     margin-left: 50px;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
-#menu li a:hover {
+#menu li a:hover,
+#menu li a:focus-visible {
+    background-color: rgba(0, 0, 0, 0.08);
     color: var(--primary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+#menu li a:active {
+    transform: translateY(1px);
 }
 #bar {
     color: black;
