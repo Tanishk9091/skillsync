@@ -296,9 +296,34 @@
             const signupForm = document.getElementById('signup-form');
             const togglePasswordIcons = document.querySelectorAll('.toggle-password');
             const menu = document.getElementById('menu');
+            const bar = document.getElementById('bar');
             const popupOverlay = document.getElementById('popup');
             const popupTitle = document.getElementById('popup-title');
             const popupMessage = document.getElementById('popup-message');
+
+            // --- MOBILE MENU TOGGLE ---
+            if (bar && menu) {
+                bar.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                    bar.classList.toggle('active');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!menu.contains(e.target) && !bar.contains(e.target)) {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+
+                // Close menu when clicking on a link
+                menu.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A') {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+            }
 
             // --- Function to update navbar based on login state ---
             const updateNavbar = () => {

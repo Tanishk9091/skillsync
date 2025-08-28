@@ -294,6 +294,31 @@
                 return;
             }
             const menu = document.getElementById('menu');
+            const bar = document.getElementById('bar');
+
+            // --- MOBILE MENU TOGGLE ---
+            if (bar && menu) {
+                bar.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                    bar.classList.toggle('active');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!menu.contains(e.target) && !bar.contains(e.target)) {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+
+                // Close menu when clicking on a link
+                menu.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A') {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+            }
 
            
             const updateNavbar = () => {
