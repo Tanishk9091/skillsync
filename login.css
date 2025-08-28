@@ -391,6 +391,12 @@ header {
 .job-filter-horizontal li:hover:not(.active) {
     background-color: #f0f0f0;
 }
+a.job-listings-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Keeps the original text color */
+    display: block; /* Makes the link a block-level element */
+    cursor: pointer;
+}
 
 /* --- TRUSTED BY SECTION --- */
 .trust {
