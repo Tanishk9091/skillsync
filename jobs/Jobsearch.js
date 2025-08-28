@@ -16,16 +16,12 @@ const displayItems = (items) => {
     items.forEach((item) => {
         const { index, image, title, rate, av } = item;
 
-        // Create the link (<a> tag)
         const jobLink = document.createElement("a");
-
-        // This is the corrected line that adds the ID to the URL
         jobLink.href = `/jobs/jobs-detail.html?id=${index}`;
         
         jobLink.style.textDecoration = 'none';
         jobLink.style.color = 'inherit';
 
-        // Create the job card (<div>)
         const jList = document.createElement("div");
         jList.className = "jList";
         jList.innerHTML = `
@@ -37,10 +33,8 @@ const displayItems = (items) => {
             <span id="key">${av}</span>
         `;
         
-        // Put the card inside the link
         jobLink.appendChild(jList);
 
-        // Add the completed link to the page
         rootElement.appendChild(jobLink);
     });
 };
