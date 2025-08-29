@@ -86,11 +86,54 @@
 		</div>
 	</main>
 
-	<footer>
-		<div class="obj-width">© <span id="year"></span> SkillSync. All rights reserved.</div>
+	<footer class="footer">
+		<div class="obj-width">
+			<div class="top">
+				<div>
+					<a href="login.html" class="logo-text">SkillSync</a>
+					<p>Search your desired jobs</p>
+				</div>
+				<div>
+					<a href="#">
+						<i class="bx bxl-facebook-square"></i>
+					</a>
+				</div>
+			</div>
+
+			<div class="bottom">
+				<div>
+					<h3>Project</h3>
+					<a href="#">Changelog</a>
+					<a href="#">Status</a>
+					<a href="#">Licence</a>
+					<a href="#">All Version</a>
+				</div>
+
+				<div>
+					<h3>Community</h3>
+					<a href="#">GitHub</a>
+					<a href="#">Issues</a>
+					<a href="#">Project</a>
+					<a href="#">Twitter</a>
+				</div>
+
+				<div>
+					<h3>Others</h3>
+					<a href="#">Terms of Services</a>
+					<a href="#">Status</a>
+					<a href="#">Privacy Policy</a>
+					<a href="#">License</a>
+				</div>
+			</div>
+		</div>
 	</footer>
 
 	<script>
+		// Gate: block access if not logged in
+		(function(){
+			const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+			if (!loggedInUserEmail) { window.location.href = 'loginpage.html'; }
+		})();
 		function submitContact(form) {
 			const status = document.getElementById('formStatus');
 			status.textContent = 'Sending...';
@@ -101,7 +144,7 @@
 				form.reset();
 			}, 600);
 		}
-		document.getElementById('year').textContent = new Date().getFullYear();
+		// Year display removed since footer now standardized
 	</script>
 </body>
 </html>

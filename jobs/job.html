@@ -92,6 +92,15 @@
 
 
     
+    <script>
+        // Gate: block access if not logged in
+        (function(){
+            const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+            if (!loggedInUserEmail) {
+                window.location.href = '../loginpage.html';
+            }
+        })();
+    </script>
     <script src="job-list.js"></script>
     <script src="Jobsearch.js"></script> 
 </body>

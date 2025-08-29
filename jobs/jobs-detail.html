@@ -33,6 +33,11 @@
 
     <script src="job-list.js"></script>
     <script>
+        // Gate: block access if not logged in
+        (function(){
+            const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+            if (!loggedInUserEmail) { window.location.href = '../loginpage.html'; }
+        })();
         document.addEventListener('DOMContentLoaded', () => {
             const urlParam = new URLSearchParams(window.location.search);
             const index = urlParam.get("id");

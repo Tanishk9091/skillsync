@@ -41,7 +41,7 @@
 </div>
             </div>
             <div class="h-right">
-                <img src="image.jpg" alt="">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="Professionals collaborating during a job search" loading="lazy">
             </div>
         </div>
     </section>
@@ -157,6 +157,33 @@
             <span id="key">Part Time</span>
         </li>
         </a>
+        <a href="jobs/job.html">
+        <li data-item="fullTime" class="jlist">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/768px-Microsoft_logo.svg.png"
+                alt="Microsoft logo" height="50px" width="50px">
+            <h3>Data Analyst</h3>
+            <p>$1,200-1,600/m</p>
+            <span id="key">Full Time</span>
+        </li>
+        </a>
+        <a href="jobs/job.html">
+        <li data-item="freelancer" class="jlist">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                alt="Amazon logo" height="50px" width="50px">
+            <h3>Content Writer</h3>
+            <p>$20-40/hr</p>
+            <span id="key">Freelancer</span>
+        </li>
+        </a>
+        <a href="jobs/job.html">
+        <li data-item="partTime" class="jlist">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png"
+                alt="Tesla logo" height="50px" width="50px">
+            <h3>DevOps Engineer</h3>
+            <p>$1,000-1,400/m</p>
+            <span id="key">Part Time</span>
+        </li>
+        </a>
     </div>
 </section>
 
@@ -217,7 +244,7 @@
         <div class="obj-width">
             <div class="top">
                 <div>
-                <a href="../login.html" class="logo-text">SkillSync</a>
+                <a href="login.html" class="logo-text">SkillSync</a>
                 <p>Search your desired jobs</p>
             </div>
             <div>
@@ -258,10 +285,41 @@
 
      </footer>
      <script src="jobs/job-list.js"></script>
-     <script src="jobs/Jobsearch.js"></script>
+     <script src="jobs/script.js"></script>
      <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Auth gate: require login before accessing homepage content
+            const loggedInUserEmailGate = localStorage.getItem('loggedInUserEmail');
+            if (!loggedInUserEmailGate) {
+                window.location.href = 'loginpage.html';
+                return;
+            }
             const menu = document.getElementById('menu');
+            const bar = document.getElementById('bar');
+
+            // --- MOBILE MENU TOGGLE ---
+            if (bar && menu) {
+                bar.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                    bar.classList.toggle('active');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!menu.contains(e.target) && !bar.contains(e.target)) {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+
+                // Close menu when clicking on a link
+                menu.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A') {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+            }
 
            
             const updateNavbar = () => {

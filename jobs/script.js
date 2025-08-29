@@ -35,33 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterTabs = document.querySelector('.job-filter-horizontal');
     const searchBar = document.getElementById('searchBar');
     const heroSearchBar = document.getElementById('hero-search-input');
+    const heroSearchBtn = document.querySelector('.hero #g-btn');
+    const jobsSection = document.querySelector('.jobs');
     const jobListItems = document.querySelectorAll('.jobs-container .jlist');
 
     // The main function that filters jobs based on BOTH category and search term
     const masterFilter = () => {
         const activeTab = document.querySelector('.job-filter-horizontal .active');
-        // If the filter tabs don't exist on the page, exit the function
-        if (!activeTab) return; 
+        if (!activeTab) return;
 
-        const activeCategory = activeTab.getAttribute('data-filter');
-        const searchTerm = searchBar.value.toLowerCase();
+        // Homepage tabs use data-target (e.g., all, freelancer, fullTime, partTime)
+        const activeCategory = (activeTab.getAttribute('data-target') || 'all').toLowerCase();
+        const searchTerm = (searchBar && searchBar.value ? searchBar.value : '').toLowerCase();
 
         jobListItems.forEach(job => {
-            const jobCategory = job.getAttribute('data-category');
-            const jobTitle = job.querySelector('h3').textContent.toLowerCase();
+            // Job cards use data-item (e.g., fulltime, freelancer, partTime)
+            const jobCategory = (job.getAttribute('data-item') || '').toLowerCase();
+            const jobTitle = (job.querySelector('h3')?.textContent || '').toLowerCase();
 
-            // Condition 1: Check if the category matches (or if "all" is selected)
             const categoryMatch = activeCategory === 'all' || activeCategory === jobCategory;
-            
-            // Condition 2: Check if the job title includes the search term
             const searchMatch = jobTitle.includes(searchTerm);
 
-            // Show the job only if BOTH conditions are true
-            if (categoryMatch && searchMatch) {
-                job.style.display = 'flex';
-            } else {
-                job.style.display = 'none';
-            }
+            job.style.display = categoryMatch && searchMatch ? 'flex' : 'none';
         });
     };
 
@@ -69,10 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filterTabs) {
         filterTabs.addEventListener('click', (e) => {
             if (e.target.tagName === 'LI') {
-                // Update active class
-                document.querySelector('.job-filter-horizontal .active').classList.remove('active');
+                const currentActive = document.querySelector('.job-filter-horizontal .active');
+                if (currentActive) currentActive.classList.remove('active');
                 e.target.classList.add('active');
-                // Run the filter
                 masterFilter();
             }
         });
@@ -86,8 +80,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener to sync the hero search bar with the main one
     if (heroSearchBar && searchBar) {
         heroSearchBar.addEventListener('keyup', () => {
-            searchBar.value = heroSearchBar.value; // Copy text
-            masterFilter(); // Run the filter
+            searchBar.value = heroSearchBar.value;
+            masterFilter();
         });
     }
+
+    if (heroSearchBtn && searchBar) {
+        heroSearchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (heroSearchBar) {
+                searchBar.value = heroSearchBar.value;
+            }
+            masterFilter();
+            if (jobsSection) {
+                jobsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            searchBar.focus();
+        });
+    }
+
+    // Initial run to sync UI with default active tab and any prefilled search
+    masterFilter();
 });

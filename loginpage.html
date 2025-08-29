@@ -296,9 +296,34 @@
             const signupForm = document.getElementById('signup-form');
             const togglePasswordIcons = document.querySelectorAll('.toggle-password');
             const menu = document.getElementById('menu');
+            const bar = document.getElementById('bar');
             const popupOverlay = document.getElementById('popup');
             const popupTitle = document.getElementById('popup-title');
             const popupMessage = document.getElementById('popup-message');
+
+            // --- MOBILE MENU TOGGLE ---
+            if (bar && menu) {
+                bar.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                    bar.classList.toggle('active');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!menu.contains(e.target) && !bar.contains(e.target)) {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+
+                // Close menu when clicking on a link
+                menu.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A') {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+            }
 
             // --- Function to update navbar based on login state ---
             const updateNavbar = () => {
@@ -397,6 +422,15 @@
                 return re.test(String(email).toLowerCase());
             };
 
+            // ---SIGNUP FORM SUBMIT---
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Here you would normally post to backend, then on success:
+                localStorage.setItem('hasSignedUp', 'true');
+                showPopup('Signup successful', 'Please login to continue.');
+                setTimeout(() => { hidePopup(); switchForms(loginSection, signupSection); }, 1000);
+            });
+
             // ---LOGIN FORM SUBMIT---
             loginForm.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -416,14 +450,6 @@
                     showPopup('Login successful', 'Redirecting to home...');
                     setTimeout(() => { window.location.href = 'login.html'; }, 1200);
                 }
-            });
-            
-            // ---SIGNUP FORM SUBMIT---
-            signupForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Here you would normally post to backend, then on success:
-                showPopup('Signup successful', 'Redirecting to home...');
-                setTimeout(() => { window.location.href = 'login.html'; }, 1200);
             });
 
         });
