@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Us - SkillSync</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<header>
+		<div id="navbar" class="obj-width">
+			<a href="login.html" class="logo-text">SkillSync</a>
+			<ul id="menu">
+				<li><a href="login.html">Home</a></li>
+				<li><a href="jobs/job.html">Browse Jobs</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="loginpage.html" id="w-btn">Register</a></li>
+			</ul>
+			<i id="bar" class='bx bx-menu'></i>
+		</div>
+	</header>
+
+	<main class="sec-space">
+		<div class="page-container">
+			<section class="hero">
+				<h1>Contact us</h1>
+				<p class="sub">Questions about jobs, profiles, or partnerships? Send a quick note and we’ll reply within one business day.</p>
+			</section>
+
+			<section class="grid">
+				<div class="card card--accent">
+					<h2>Send a message</h2>
+					<form onsubmit="event.preventDefault(); submitContact(this);">
+						<div>
+							<label for="name">Full name</label>
+							<input id="name" name="name" type="text" placeholder="Your name" required />
+						</div>
+						<div>
+							<label for="email">Email</label>
+							<input id="email" name="email" type="email" placeholder="you@example.com" required />
+						</div>
+						<div>
+							<label for="message">Message</label>
+							<textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+						</div>
+						<div class="actions">
+							<button class="btn" type="submit"><i class='bx bx-send'></i> Send</button>
+							<button class="btn ghost" type="reset">Reset</button>
+							<span class="small" id="formStatus" role="status" aria-live="polite"></span>
+						</div>
+					</form>
+				</div>
+
+				<aside class="card">
+					<h2>Reach us</h2>
+					<div class="info-list">
+						<div class="info-item">
+							<div class="info-icon"><i class='bx bx-envelope'></i></div>
+							<div class="info-text">
+								<strong>Email</strong>
+								<span>support@skillsync.example</span>
+							</div>
+						</div>
+						<div class="info-item">
+							<div class="info-icon"><i class='bx bx-phone'></i></div>
+							<div class="info-text">
+								<strong>Phone</strong>
+								<span>+1 (555) 123-4567</span>
+							</div>
+						</div>
+						<div class="info-item">
+							<div class="info-icon"><i class='bx bx-time-five'></i></div>
+							<div class="info-text">
+								<strong>Hours</strong>
+								<span>Mon–Fri, 9:00–17:00</span>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+		<div class="obj-width">© <span id="year"></span> SkillSync. All rights reserved.</div>
+	</footer>
+
+	<script>
+		function submitContact(form) {
+			const status = document.getElementById('formStatus');
+			status.textContent = 'Sending...';
+			const data = Object.fromEntries(new FormData(form).entries());
+			setTimeout(() => {
+				console.log('Contact form submission', data);
+				status.textContent = 'Thanks! We received your message.';
+				form.reset();
+			}, 600);
+		}
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>
