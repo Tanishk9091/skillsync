@@ -129,11 +129,54 @@
 	</footer>
 
 	<script>
-		// Gate: block access if not logged in
-		(function(){
-			const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
-			if (!loggedInUserEmail) { window.location.href = 'loginpage.html'; }
-		})();
+		document.addEventListener('DOMContentLoaded', () => {
+			// Public access: remove auth gate and enable hamburger
+			const menu = document.getElementById('menu');
+			const bar = document.getElementById('bar');
+			if (bar && menu) {
+				bar.addEventListener('click', () => {
+					menu.classList.toggle('active');
+					bar.classList.toggle('active');
+				});
+				document.addEventListener('click', (e) => {
+					if (!menu.contains(e.target) && !bar.contains(e.target)) {
+						menu.classList.remove('active');
+						bar.classList.remove('active');
+					}
+				});
+				menu.addEventListener('click', (e) => {
+					if (e.target.tagName === 'A') {
+						menu.classList.remove('active');
+						bar.classList.remove('active');
+					}
+				});
+			}
+			// Optional login state
+			const updateNavbar = () => {
+				const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+				const registerButton = document.querySelector('#w-btn');
+				if (loggedInUserEmail && registerButton) {
+					const registerLi = registerButton.parentElement;
+					const username = loggedInUserEmail.split('@')[0];
+					const welcomeText = document.createElement('li');
+					welcomeText.innerHTML = `<span class="nav-username">Hi, ${username}</span>`;
+					const logoutLink = document.createElement('li');
+					logoutLink.innerHTML = `<a href="#" id="logout-btn">Logout</a>`;
+					menu.insertBefore(welcomeText, registerLi);
+					menu.insertBefore(logoutLink, registerLi);
+					registerLi.remove();
+				}
+			};
+			menu.addEventListener('click', (e) => {
+				if (e.target.id === 'logout-btn') {
+					e.preventDefault();
+					localStorage.removeItem('loggedInUserEmail');
+					alert('You have been logged out.');
+					window.location.reload();
+				}
+			});
+			updateNavbar();
+		});
 		function submitContact(form) {
 			const status = document.getElementById('formStatus');
 			status.textContent = 'Sending...';

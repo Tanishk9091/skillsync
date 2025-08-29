@@ -33,12 +33,28 @@
 
     <script src="job-list.js"></script>
     <script>
-        // Gate: block access if not logged in
-        (function(){
-            const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
-            if (!loggedInUserEmail) { window.location.href = '../loginpage.html'; }
-        })();
         document.addEventListener('DOMContentLoaded', () => {
+            // Public access & hamburger
+            const menu = document.getElementById('menu');
+            const bar = document.getElementById('bar');
+            if (bar && menu) {
+                bar.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                    bar.classList.toggle('active');
+                });
+                document.addEventListener('click', (e) => {
+                    if (!menu.contains(e.target) && !bar.contains(e.target)) {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+                menu.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A') {
+                        menu.classList.remove('active');
+                        bar.classList.remove('active');
+                    }
+                });
+            }
             const urlParam = new URLSearchParams(window.location.search);
             const index = urlParam.get("id");
 

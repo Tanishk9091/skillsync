@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const togglePasswordIcons = document.querySelectorAll('.toggle-password');
     const menu = document.getElementById('menu');
 
+    // --- If already logged in, redirect to home page ---
+    const alreadyLoggedInEmail = localStorage.getItem('loggedInUserEmail');
+    if (alreadyLoggedInEmail) {
+        window.location.href = 'login.html';
+        return;
+    }
+
     // --- NEW: Function to update navbar based on login state ---
     const updateNavbar = () => {
         const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
