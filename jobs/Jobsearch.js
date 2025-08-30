@@ -17,7 +17,7 @@ const displayItems = (items) => {
         const { index, image, title, rate, av } = item;
 
         const jobLink = document.createElement("a");
-        jobLink.href = `jobs/jobs-detail.html?id=${index}`;
+        jobLink.href = `jobs-detail.html?id=${index}`;
         
         jobLink.style.textDecoration = 'none';
         jobLink.style.color = 'inherit';
