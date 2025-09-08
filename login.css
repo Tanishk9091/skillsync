@@ -613,7 +613,7 @@ body {
     padding: 0;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: gray;
     margin-top: 2rem;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
