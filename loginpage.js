@@ -16,16 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // --- NEW: Function to update navbar based on login state ---
     const updateNavbar = () => {
         const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
         const registerLi = document.querySelector('#w-btn')?.parentElement; // Find the Register button's list item
 
         if (loggedInUserEmail && registerLi) {
-            // User is logged in
-            const username = loggedInUserEmail.split('@')[0]; // Get name from email (e.g., "john" from "john@example.com")
-            
-            // Remove the "Register" button
+            const username = loggedInUserEmail.split('@')[0];
+
             registerLi.remove();
 
             // Add Welcome message and Logout button
@@ -36,14 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- NEW: Event listener for the logout button ---
-    // We use event delegation on the menu since the logout button is added dynamically
+    // --- NEW: Event listener for the logout button --
     menu.addEventListener('click', (e) => {
         if (e.target.id === 'logout-btn') {
             e.preventDefault();
-            // Clear the stored user email
             localStorage.removeItem('loggedInUserEmail');
-            // Reload the page to show the logged-out state
             alert('You have been logged out.');
             window.location.reload();
         }
@@ -154,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if(signupForm) {
-        // ... (signup form validation logic remains the same)
-    }
+    // if(signupForm) {
+    //     // ... (signup form validation logic remains the same)
+    // }
 });
